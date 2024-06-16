@@ -13,8 +13,12 @@
     <script>
       // ロードされ、Vueがグローバル変数として定義されているか確認
       console.assert(typeof Vue !== "undefined");
+      // コンストラクタとして使うためnew演算子でVueインスタンスを生成
       new Vue({
+        // コンストラクタの引数としてオプションオブジェクトを渡す
+        // Vueインスタンスを、マウントする要素
         el: "#app",
+        // UIの状態・データ
         data: {
           message: "こんにちは！",
         },
