@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>メソッドによるマウント</title>
+    <script src="https://unpkg.com/vue@2.5.17"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 
+        elプロパティを定義せずに、$moutメソットでもマウントできます。
+        インスタンス生成後の任意のタイミングでマウントを実行可能になります。
+        マウント対象のDOM要素がUI操作や通信などで遅延的に追加される場合はこのメソッドを用いましょう。
+       -->
+      <p>{{message}}</p>
+    </div>
+    <script>
+      // コンストラクタとして使うためnew演算子でVueインスタンスを生成
+      const vm = new Vue({
+        // UIの状態・データ
+        data: {
+          message: "こんにちは！",
+        },
+      });
+      // UI操作や通信の後、要素が生成されてからマウントを行う
+      vm.$mount("#app");
+    </script>
+  </body>
+</html>
