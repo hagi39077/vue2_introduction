@@ -8,7 +8,8 @@
   </head>
   <body>
     <div id="app">
-      <p>{{items[0].name}}</p>
+      <!-- テキストへの展開にMustasche構文を使用 -->
+      <p>{{items[0].name}}: {{items[0].price}} × {{items[0].quantity}}</p>
     </div>
     <script src="./data.js"></script>
   </body>
