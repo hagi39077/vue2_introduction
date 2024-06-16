@@ -21,6 +21,14 @@ const vm = new Vue({
     // dataプロパティ
     items: items,
   },
+  filters: {
+    numberWithDelimiter: function (value) {
+      if (!value) {
+        return "0";
+      }
+      return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    },
+  },
 });
 
 // コンソール上で確認するためにwindowオブジェクトに代入
