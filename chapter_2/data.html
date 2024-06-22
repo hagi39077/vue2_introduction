@@ -27,6 +27,13 @@
         </p>
         <!-- <p v-bind="errorMessageClass">1000円以上からご購入いただけます</p> -->
       </div>
+      <div>
+        <ul>
+          <li v-for="(item,index) in items" v-bind:key="item">
+            {{ index }} {{ item.name }}
+          </li>
+        </ul>
+      </div>
     </div>
     <script src="./data.js"></script>
   </body>

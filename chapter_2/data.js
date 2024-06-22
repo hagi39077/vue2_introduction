@@ -15,6 +15,7 @@ const items = [
     quantity: 0,
   },
 ];
+
 const vm = new Vue({
   el: "#app",
   data: {
