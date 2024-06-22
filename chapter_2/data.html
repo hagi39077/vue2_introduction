@@ -9,22 +9,24 @@
   <body>
     <div id="app">
       <!-- JavaScript式の展開 -->
-      <p>{{items[0].price * items[0].quantity}}</p>
-      <!-- テキストへの展開にMustasche構文を使用 -->
-      <p>{{items[0].name}}: {{items[0].price}} × {{items[0].quantity}}</p>
-      <!-- フィルタ処理 -->
-      <p>フィルタ処理 {{1000 | numberWithDelimiter}}</p>
-      <p>合計: {{totalPriceWithtax}}</p>
-      <!-- 
+      <div :style="errorMessageStyle">
+        <p>{{items[0].price * items[0].quantity}}</p>
+        <!-- テキストへの展開にMustasche構文を使用 -->
+        <p>{{items[0].name}}: {{items[0].price}} × {{items[0].quantity}}</p>
+        <!-- フィルタ処理 -->
+        <p>フィルタ処理 {{1000 | numberWithDelimiter}}</p>
+        <p>合計: {{totalPriceWithtax}}</p>
+        <!-- 
         条件付きレンダリングの追加
         v-ifは式の結果によってDOM要素を追加削除する
         v-showはdisplayプロパティの値を変更することで実現している。
         レンダリングコストを考慮して、v-showを使用
        -->
-      <p v-show="!canBuy">
-        {{1000 | numberWithDelimiter}}円以上からご購入いただけます
-      </p>
-      <p v-bind="errorMessageClass">1000円以上からご購入いただけます</p>
+        <p v-show="!canBuy">
+          {{1000 | numberWithDelimiter}}円以上からご購入いただけます
+        </p>
+        <!-- <p v-bind="errorMessageClass">1000円以上からご購入いただけます</p> -->
+      </div>
     </div>
     <script src="./data.js"></script>
   </body>

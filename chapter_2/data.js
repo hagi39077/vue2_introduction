@@ -42,6 +42,12 @@ const vm = new Vue({
         error: !this.canBuy,
       };
     },
+    errorMessageStyle: function () {
+      return {
+        boreder: this.canBuy ? "" : "1px solid red",
+        color: this.canBuy ? "" : "red",
+      };
+    },
   },
   filters: {
     numberWithDelimiter: function (value) {
