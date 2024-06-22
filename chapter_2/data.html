@@ -17,7 +17,22 @@
         レンダリングコストを考慮して、v-showを使用
        -->
         <ul>
-          <li v-for="(item,index) in items" v-bind:key="item">
+          <li v-for="(item,index) in items" v-bind:key="index">
+            <!-- 
+              v-onでイベントが発生した時に属性値で指定した式を評価する
+              省略記法で v-on:click は、 @clickと使用することも出来る
+             -->
+            {{item.name}}の個数 :
+            <input
+              type="number"
+              @change="item.quantity = $event.target.value"
+              v-bind:value="item.quantity"
+              min="0"
+            />
+          </li>
+        </ul>
+        <ul>
+          <li v-for="(item,index) in items" v-bind:key="index">
             {{ item.name }} : {{ item.price }} × {{ item.quantity }} =
             {{item.price * item.quantity}}円
           </li>
