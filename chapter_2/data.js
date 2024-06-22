@@ -2,7 +2,7 @@ const items = [
   {
     name: "鉛筆",
     price: 300,
-    quantity: 2,
+    quantity: 1,
   },
   {
     name: "ノート",
@@ -12,7 +12,7 @@ const items = [
   {
     name: "消しゴム",
     price: 500,
-    quantity: 3,
+    quantity: 0,
   },
 ];
 const vm = new Vue({
@@ -33,6 +33,9 @@ const vm = new Vue({
     totalPriceWithtax: function () {
       // 算出プロパティに依存した算出プロパティも定義できる
       return Math.floor(this.totalPrice * 1.1);
+    },
+    canBuy: function () {
+      return this.totalPrice >= 1000;
     },
   },
   filters: {
