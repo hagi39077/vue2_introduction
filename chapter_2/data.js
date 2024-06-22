@@ -24,6 +24,8 @@ const vm = new Vue({
   computed: {
     totalPrice: function () {
       // this経由でインスタンス内のデータにアクセス
+      // dataや算出プロパティを参照したいときは、this経由で参照する。
+      // このthisが指すのはvVueインタンス自身。
       return this.items.reduce(function (sum, item) {
         return sum + item.price * item.quantity;
       }, 0);
