@@ -23,12 +23,18 @@
               省略記法で v-on:click は、 @clickと使用することも出来る
              -->
             {{item.name}}の個数 :
-            <input
+            <!-- <input
               type="number"
               @change="item.quantity = $event.target.value"
               v-bind:value="item.quantity"
               min="0"
-            />
+            /> -->
+
+            <!-- 
+              フォーム入力バインディング（v-model)でリファクタ
+              v-modelは双方向バインディングを実現するディレクティブ
+            -->
+            <input type="number" v-model.lazy="item.quantity" min="0" />
           </li>
         </ul>
         <ul>
