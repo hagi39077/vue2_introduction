@@ -30,6 +30,10 @@ const vm = new Vue({
         return sum + item.price * item.quantity;
       }, 0);
     },
+    totalPriceWithtax: function () {
+      // 算出プロパティに依存した算出プロパティも定義できる
+      return Math.floor(this.totalPrice * 1.1);
+    },
   },
   filters: {
     numberWithDelimiter: function (value) {
