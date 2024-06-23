@@ -58,6 +58,19 @@ const vm = new Vue({
       return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     },
   },
+  /**
+   * メソッドの実装
+   * Vueインスタンスのメソッドとして機能する。
+   * methodsはデータの変更やサーバーにHTTPリクエストを送る際に用いる。
+   */
+  methods: {
+    doBuy: function () {
+      alert(`${this.totalPriceWithtax} 円のお買い上げ`);
+      this.items.forEach(function (item) {
+        item.quantity = 0;
+      });
+    },
+  },
 });
 
 // コンソール上で確認するためにwindowオブジェクトに代入
