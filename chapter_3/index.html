@@ -7,22 +7,17 @@
     <script src="https://unpkg.com/vue@2.5.17"></script>
   </head>
   <body>
-    <ul id="example">
-      <list-item></list-item>
+    <ul id="fruits-list">
+      <fruits-list-title></fruits-list-title>
     </ul>
     <script>
-      // コンポーネント
-      Vue.component("list-item", {
-        template: "<li>{{contents}}</li>",
-        data() {
-          return {
-            contents: "bar",
-          };
-        },
+      Vue.component("fruits-list-title", {
+        template: "<h1>フルーツ一覧</h1>",
       });
 
-      // ルート`Vue`インスタンスの作成
-      new Vue({ el: "#example" });
+      new Vue({
+        el: "#fruits-list",
+      });
     </script>
   </body>
 </html>
