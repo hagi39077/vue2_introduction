@@ -8,19 +8,19 @@
   </head>
   <body>
     <main id="main">
-      <fruits-list></fruits-list>
+      <div id="fruits-list">
+        <fruits-list-title></fruits-list-title>
+      </div>
     </main>
 
     <script>
-      Vue.component("fruits-list-title", {
-        template: "<h1>フルーツ一覧</h1>",
-      });
-      Vue.component("fruits-list", {
-        template: "<div><fruits-list-title></fruits-list-title></div>",
-      });
-
       new Vue({
-        el: "#main",
+        el: "#fruits-list",
+        components: {
+          "fruits-list-title": {
+            template: "<h1>フルーツ一覧</h1>",
+          },
+        },
       });
     </script>
   </body>
